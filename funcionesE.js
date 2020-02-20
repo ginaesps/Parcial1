@@ -1,13 +1,18 @@
-var repeticiones=3;
+var veces=8;
 
-console.log("El resultado es ",calcularE(repeticiones));
+console.log("e: ",calcularE(veces));
 
 function calcularE(reps)
 {
-    var i,e;
-    
-    for(i=1;i<=reps;i++)
-        e+=(1 / factorial(i));
+    var i,suma=1,denom=1;
+
+    for(i=0;i<reps;i++)
+    {
+        suma+=1/factorial(denom);
+        denom++;
+    }
+
+    return suma;
 }
 
 function factorial(num)
@@ -16,6 +21,5 @@ function factorial(num)
 
     for(i=num-1;i>0;i--)
         n*=i;
-
     return n;
 }
