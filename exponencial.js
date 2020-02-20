@@ -1,23 +1,25 @@
-var veces=4;
+var veces=15,valor=3;
 
-console.log(" ",expont(veces));
+console.log(" ",eX(valor,veces));
 
-function expont(exp)
+function eX(x,reps)
 {
-    var e=0, x=2, mult=1, res=0, potencia=0, suma=0, sumafactorial=0,i;
-    for(i=1; i<=exp; i++)
+    var i,suma=1,exp=1;
+
+    for(i=0;i<reps;i++)
     {
-        mult*=i;
-        sumafactorial+=mult;
+        suma+=(Math.pow(x,exp))/factorial(exp);
+        exp++;
     }
-    
-    for(var j=1; j<=a; j++)
-    {
-        potencia+=Math.pow(x,j);
-        suma+=potencia;
-    }
-    
-    e=1+(suma/sumafactorial);
-    res= Math.pow(e,x);
-    return res;
+
+    return suma;
+}
+
+function factorial(num)
+{
+    var n=num,i;
+
+    for(i=num-1;i>0;i--)
+        n*=i;
+    return n;
 }
