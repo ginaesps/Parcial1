@@ -16,7 +16,7 @@ function carrera()
         ganador="Empate";
     else if(pulga1>pulga2)
         ganador="Pulga 1";
-    else if(pulga2>pulga1)
+    else
         ganador="Pulga 2";
 
     return ganador;
