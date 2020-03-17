@@ -1,36 +1,33 @@
-var entra= new hora(11,59,39),sale= new hora(17,34,1),contS=0,contM=0;contH=0;
+let entra= new hora(11,59,39);
+let sale= new hora(17,34,1);
+let cuantoTiempo= new hora(0,0,0);
+var cont=0;
 
-while(entra.s!=sale.s)
+cuantoTiempo.s=(60-entra.s+sale.s);
+if(cuantoTiempo.s>=60)
 {
-    entra.s++;
-    if(entra.s==60)
+    cuantoTiempo.s-=60;
+    cont=-1;
+}
+
+cuantoTiempo.m=60-entra.m+sale.m+cont;
+cont=0;
+if(cuantoTiempo.m>=60)
+{
+    cuantoTiempo.m-=60;
+    cont=-1;
+}
+
+cuantoTiempo.h=sale.h-entra.h+cont;
+
+console.log("Duró",cuantoTiempo.h,"h");
+
+class hora
+{
+    constructor(h,m,s)
     {
-        entra.s=0;
-        entra.m++;
+        this.h=h;
+        this.m=m; 
+        this.s=s;
     }
-    contS++;
 }
-
-while(entra.m!=sale.m)
-{
-    entra.m++;
-    if(entra.m==60)
-    {
-        entra.m=0;
-        entra.h++;
-    }
-    contM++;
-}
-
-contH=sale.h-entra.h;
-
-var cuantoTiempo= new hora(contH,contM,contS);
-console.log("Trabajó",cuantoTiempo);
-
-function hora(h,m,s)
-{
-    this.h=h;
-    this.m=m;
-    this.s=s;
-}
-
