@@ -10,33 +10,12 @@ class hora
     }
 }
 
-let entra= new hora(2,20,30), sale= new hora(4,10,20),cuantoTiempo= new hora(0,0,0);
-var cont=0;
+var entra= new hora(2,20,30), sale= new hora(4,10,20);
+var segundosTotalesEntrada=hmsAsegundos(entra.h,entra.m,entra.s);
+var segundosTotaleSalida=hmsAsegundos(sale.h,sale.m,sale.s);
+var segundosTotalesTrabajo=segundosTotaleSalida-segundosTotalesEntrada;
 
-cuantoTiempo.s=(60-entra.s+sale.s);
-cuantoTiempo.m=60-entra.m+sale.m;
-cuantoTiempo.m-=calcTiempo(cuantoTiempo.s);
-cuantoTiempo.h=sale.h-entra.h;
-cuantoTiempo.h-=calcTiempo(cuantoTiempo.m);
-
-console.log("Duró",cuantoTiempo.h,"h",",",cuantoTiempo.m,",",cuantoTiempo.s);
-console.log(segundosAhms(3602),"función s-->hms");
-console.log("Función hms-->s",hmsAsegundos(3,4,56));
-
-function calcTiempo(valor)
-{
-    var cont=0;
-    if(valor>0)
-    {
-        cont++;
-        if(valor>=60)
-        {
-            valor-=60;
-            cont++;
-        }
-    }
-    return cont;
-}
+console.log(segundosAhms(segundosTotalesTrabajo));
 
 function hmsAsegundos(h,m,s)//debe regresar los segundos que han pasado desde las 00:00:00 hasta la hora dada a formato de 24
 {
