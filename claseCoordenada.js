@@ -16,4 +16,8 @@ class Punto{
         var d=Math.sqrt(Math.pow((pDestino.x-this.x),2)+Math.pow((pDestino.y-this.y),2)); 
         return d;
     }
+    distanciaEntrePuntos(x1,y1,x2,y2){
+        var d=Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2)); 
+        return d;
+    }
 }
