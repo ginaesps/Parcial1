@@ -1,7 +1,7 @@
 class Punto{
     constructor(x,y){
-        Punto.contador=0;
-        this.cont=Punto.contador++;
+        //Punto.contador=0;
+        //this.cont=Punto.contador++;
         this.x=x;
         this.y=y;
     }
@@ -17,9 +17,3 @@ class Punto{
         return d;
     }
 }
-
-var mipunto=new Punto(3,5);
-var destino=new Punto(4,7);
-
-console.log(mipunto)
-console.log(destino)
