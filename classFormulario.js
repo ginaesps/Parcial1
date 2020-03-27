@@ -7,6 +7,6 @@ class Formulario{
 }
 
 const btn=document.getElementById("boton").addEventListener("click",function(){
-    let nombre=getElementById("name").value;
+    let nombre=document.getElementById("name").value;
     console.log("nombre"+nombre);
 })
