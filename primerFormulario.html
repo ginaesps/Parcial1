@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <h1>Formulario</h1>
-  <h3>Pruebas con formulario que solo arroja los campos</h3>
 <form>
   <div>
-    <div id="name_product">
+    <div id="product">
       <label for="name">Nombre del producto:</label>
-      <input type="text" placeholder="Sombrero, por ejemplo" id="name">
+      <input type="text" placeholder="¿Que buscas?" id="name">
     </div>
     <div id="price_product">
       <label for="price">Precio:</label>
@@ -14,15 +12,16 @@
     </div>
     <div id="quantity_product">
       <label for="qnty">Cantidad:</label>
-      <input type="number" id="quantity">
+      <input type="number" placeholder="¿Cuantos quieres?" id="quantity">
     </div>
   </div>
-  <p>Aqui vamos a ir agregando los productos que vayamos metiendo</p>
+  <p>Productos agregados</p>
   <div>
     <div id="productList">
+      <p><strong>Nombre</strong><strong>Precio</strong><strong>Cantidad</strong></p>
     </div>
   </div>
-  <button type="submit" id="boton">Envíe su mensaje</button>//utilice reset ya que aun no sé como guardar la info (gracias por la observación :) )
+  <button type="button" id="boton">Envíe su mensaje</button>
 </form>
 <script src="JSparaHTML/classFormulario.js"></script>
 </html> 
