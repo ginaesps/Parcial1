@@ -1,26 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>https://bootswatch.com/4/lux/bootstrap.min.css</head>
-<form id='product-form'>
-  <div>
-    <div id="product">
-      <label for="name">Nombre del producto:</label>
-      <input type="text" placeholder="¿Que buscas?" id="name">
-    </div>
-    <div id="price_product">
-      <label for="price">Precio:</label>
-      <input type="number" placeholder="$" id="price">
-    </div>
-    <div id="quantity_product">
-      <label for="qnty">Cantidad:</label>
-      <input type="number" placeholder="¿Cuantos quieres?" id="quantity">
-    </div>
-  </div>
-  <p>Productos agregados</p>
-  <div>
-    <div id="productList"></div>
-  </div>
-  <button type="submit" id="boton">Envíe su mensaje</button>
-</form>
-<script src="JSparaHTML/classFormulario.js"></script>
+<html lang="en">
+  <head>
+    <!-- Boostrap CDN-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+        
+    <title>Productos // POO</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="App" class="row pt-5">
+          <div class="col-md-4">
+              <div class="card-header">
+                  <h4>Add Product</h4>
+              </div>
+          </div>
+      </div>
+    </div>x
+    <form id='product-form'>
+      <div>
+        <div id="product">
+          <label for="name">Nombre del producto:</label>
+          <input type="text" placeholder="¿Que buscas?" id="name">
+        </div>
+        <div id="price_product">
+          <label for="price">Precio:</label>
+          <input type="number" placeholder="$" id="price">
+        </div>
+        <div id="quantity_product">
+          <label for="qnty">Cantidad:</label>
+          <input type="number" placeholder="¿Cuantos quieres?" id="quantity">
+        </div>
+      </div>
+      <p>Productos agregados</p>
+      <div id="productList"></div>      
+      <button type="submit" id="boton">Envíe su mensaje</button>
+    </form>
+    <script src="JSparaHTML/classFormulario.js"></script>
+  </body>
 </html> 
