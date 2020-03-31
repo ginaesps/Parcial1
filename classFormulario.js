@@ -1,4 +1,3 @@
-/* Es recomendable */
 class Producto{
     constructor(name,price,quantity){
         this.name=name;
@@ -12,6 +11,10 @@ class UI{ //UI: User Interface
         const productList=document.getElementById('productList');
         const element=document.createElement('div');
         element.innerHTML =` 
+            <div class='card text-center mb-4>
+            <div class='card-body'>
+            </div>
+            </div>
             <div>
                 <div>
                     <strong>product Name</strong>: ${product.name} 
@@ -33,6 +36,7 @@ const btn=document.getElementById("product-form").addEventListener('submit',(e)=
     const qty=document.getElementById('quantity').value;
     const price=document.getElementById('price').value;
     const product=new Producto(name,price,qty);
+    <a href='#' class='btn btn-danger' name='delete'>Delete</a>
     console.log(product);
     var ui=new UI();
     ui.addProduct(product);
