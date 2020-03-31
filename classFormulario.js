@@ -6,13 +6,31 @@ class Producto{
     }
 }
 
-const btn=document.getElementById("boton").addEventListener("click",function(){
-    let nombre=document.getElementById("name").value;
-    let precio=document.getElementById("price").value;
-    let cantidad=document.getElementById("quantity").value;
-    let product=document.getElementById("productList");
-    let price=document.getElementById("productList");
-    let qty=document.getElementById("productList").innerHTML="<p><strong>Nombre:</strong>"+nombre+"<strong>Precio:</strong>"+precio+"<strong>Cantidad:</strong>"+cantidad+"<p>"
-    //let nomP=document.createElement("div");
-    console.log("nombre",nombre);
+class UI{ //UI: User Interface
+    addProduct(product){
+        const productList=document.getElementById('productList');
+        const element=document.createElement('div');
+        element.innerHTML =` 
+            <div>
+                <div>
+                    <strong>product Name</strong>: ${product.name} 
+                    <strong>product Price</strong>: ${product.price}
+                    <strong>product Year</strong>: ${product.year}
+                </div>
+            </div>
+        `; // ese tipo de apóstrofe es para indicar una instrucción de varias líneas
+        productList.appendChild(element); // INVESTIGAR
+    }
+}
+
+const btn=document.getElementById("product-form").addEventListener('submit',(e)=>{
+    console.log(e);
+    const name=document.getElementById('name').value;
+    const qty=document.getElementById('quantity').value;
+    const price=document.getElementById('price').value;
+    const product=new Producto(name,price,qty);
+    console.log(product);
+    var ui=new UI();
+    ui.addProduct(product);
+    e.preventDefault();
 })
