@@ -14,12 +14,15 @@ class UI{ //UI: User Interface
             <div>
                 <div>
                     <strong>product Name</strong>: ${product.name} 
-                    <strong>product Price</strong>: ${product.price}
-                    <strong>product Year</strong>: ${product.year}
+                    <strong>Price</strong>: ${product.price}
+                    <strong>Quantity</strong>: ${product.qty}
                 </div>
             </div>
         `; // ese tipo de apóstrofe es para indicar una instrucción de varias líneas
         productList.appendChild(element); // INVESTIGAR
+    }
+    resetForm(){
+        document.getElementById('product-form').reset();
     }
 }
 
