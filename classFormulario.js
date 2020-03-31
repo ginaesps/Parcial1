@@ -1,3 +1,4 @@
+/* Es recomendable */
 class Producto{
     constructor(name,price,quantity){
         this.name=name;
@@ -35,5 +36,6 @@ const btn=document.getElementById("product-form").addEventListener('submit',(e)=
     console.log(product);
     var ui=new UI();
     ui.addProduct(product);
+    ui.resetForm();
     e.preventDefault();
 })
