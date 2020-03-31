@@ -12,11 +12,7 @@ class UI{
         const element=document.createElement('div');
         element.innerHTML =` 
             <div class='card text-center mb-4>
-            <div class='card-body'>
-            </div>
-            </div>
-            <div>
-                <div>
+                <div class='card-body'>
                     <strong>product Name</strong>: ${product.name} 
                     <strong>Price</strong>: ${product.price}
                     <strong>Quantity</strong>: ${product.qty}
