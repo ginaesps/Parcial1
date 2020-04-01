@@ -20,17 +20,16 @@ class UI{
                 </div>
             </div>
         `; 
-        productList.appendChild(element);
-        this.showMessage('Producto agregado exitosamente',success);
+        productList.appendChild(element);        
     }
     resetForm(){
         document.getElementById('product-form').reset();
     }
     deleteProduct(element){
         if(element.name==='delete'){
-            element.parentElement.parentElement.parentElement.remove()
+            element.parentElement.parentElement.parentElement.remove();
+            this.showMessage('Producto eliminado exitosamente','danger');
         }
-        this.showMessage('Producto eliminado exitosamente',danger)
     }
     showMessage(mensaje,clase){
         const element=document.createElement('div');
@@ -41,7 +40,7 @@ class UI{
         contenedor.insertBefore(element,app);
         setTimeout(()=>{
             document.querySelector('.alert').remove();
-        },3000)
+        },2500)
     }
 }
 
@@ -55,7 +54,7 @@ const btn=document.getElementById("product-form").addEventListener('submit',(e)=
     var ui=new UI();
     ui.addProduct(product);
     ui.resetForm();
-    ui.showMessage('Producto agregado','danger') ; 
+    ui.showMessage('Producto agregado exitosamente','success') ; 
     e.preventDefault();
 })
 
