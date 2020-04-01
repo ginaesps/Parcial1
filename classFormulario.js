@@ -21,6 +21,7 @@ class UI{
             </div>
         `; 
         productList.appendChild(element);
+        this.showMessage('Producto agregado exitosamente',success);
     }
     resetForm(){
         document.getElementById('product-form').reset();
@@ -29,6 +30,18 @@ class UI{
         if(element.name==='delete'){
             element.parentElement.parentElement.parentElement.remove()
         }
+        this.showMessage('Producto eliminado exitosamente',danger)
+    }
+    showMessage(mensaje,clase){
+        const element=document.createElement('div');
+        element.className=`alert alert-${clase} mt-2`;
+        element.appendChild(document.createTextNode(mensaje));
+        const contenedor=document.querySelector('.container');
+        const app=document.querySelector('#App');
+        contenedor.insertBefore(element,app);
+        setTimeout(()=>{
+            document.querySelector('.alert').remove();
+        },3000)
     }
 }
 
@@ -42,6 +55,7 @@ const btn=document.getElementById("product-form").addEventListener('submit',(e)=
     var ui=new UI();
     ui.addProduct(product);
     ui.resetForm();
+    ui.showMessage('Producto agregado','danger') ; 
     e.preventDefault();
 })
 
