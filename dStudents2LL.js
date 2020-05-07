@@ -76,6 +76,7 @@ class DoubleLinkedList {
             if (temp.numControl === numOfControl) return temp;
             else return null;
         }
+        return null; //Si no hay información regresaremos null
     }
     List() {
         if (this.head === null) return " ";
